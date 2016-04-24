@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'MWFeedParser'
-    s.version = '1.0.1'
+    s.version = '1.0.2'
     s.license = 'MIT (with amendments)'
     s.summary = 'An RSS and Atom web feed parser for iOS.'
     s.description = 'MWFeedParser is an Objective-C framework for ' \
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
     s.author = { 'Michael Waterfall' => 'michaelwaterfall@gmail.com' }
     s.source = {
         :git => 'https://github.com/mwaterfall/MWFeedParser.git',
-        :tag => '1.0.1'
+        :tag => '1.0.2'
     }
     s.platform = :ios, '5.1.1'
     s.requires_arc = true
