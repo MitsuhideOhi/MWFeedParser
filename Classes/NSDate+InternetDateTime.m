@@ -91,6 +91,14 @@ static NSDateFormatter *_internetDateTimeFormatter = nil;
                     [dateFormatter setDateFormat:@"d MMM yyyy HH:mm"]; 
                     date = [dateFormatter dateFromString:RFC822String];
                 }
+                if (!date) { // Wed Jun 08 2016 18:32:28 GMT+0900 (JST)
+                    [dateFormatter setDateFormat:@"EEE' 'MMM' 'dd' 'yyyy' 'HH':'mm':'ss' GMT'Z"];
+                    NSString *_RFC822String = RFC822String;
+                    if ([_RFC822String length] > 0) {
+                        _RFC822String = [_RFC822String substringToIndex:[_RFC822String length] - 6];
+                    }
+                    date = [dateFormatter dateFromString:_RFC822String];
+                }
             }
             if (!date) NSLog(@"Could not parse RFC822 date: \"%@\" Possible invalid format.", dateString);
             
